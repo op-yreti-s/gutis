@@ -1,0 +1,24 @@
+language: python
+
+python:
+    - "3.6"
+
+install:
+    - deactivate
+    - source devtools/ci/install_conda.sh
+    - export PYTHONUNBUFFERED=true
+
+script:
+    - echo travis_fold:start:installation
+    - conda install --yes conda-build
+    - conda build devtools/ops-conda-recipe
+    - pip install pyretis
+
+    # run tests
+    - conda info --envs
+    - conda install --yes nose nose-timer python-coveralls
+
+env:
+    matrix:
+        - python=3.6 CONDA_PY=36 CONDA_NPY=110
+

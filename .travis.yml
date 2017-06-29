@@ -4,7 +4,8 @@ install:
     - deactivate
     - source devtools/ci/install_conda.sh
     - export PYTHONUNBUFFERED=true
-    - conda install --yes conda-build
+    # for some reason, ujson won't install in conda-build
+    - conda install --yes conda-build ujson
     - conda build devtools/ops-conda-recipe
     - pip install pyretis
     - source devtools/ci/test_installation.sh

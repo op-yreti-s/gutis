@@ -16,12 +16,8 @@ requirements:
     - future
     - ujson
     - setuptools
-
-  run:
-    - python
     - numpy
     - scipy
-    - future
     - pandas
     - hdf4 4.2.12
     - netcdf4
@@ -32,7 +28,6 @@ requirements:
     - svgwrite
     - networkx
     - matplotlib
-    - ujson
 
 test:
   imports:

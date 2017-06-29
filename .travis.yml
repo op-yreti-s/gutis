@@ -4,21 +4,16 @@ install:
     - deactivate
     - source devtools/ci/install_conda.sh
     - export PYTHONUNBUFFERED=true
-
-script:
-    - echo travis_fold:start:installation
     - conda install --yes conda-build
     - conda build devtools/ops-conda-recipe
     - pip install pyretis
-    - echo travis_fold:end:installation
-
-    - echo "Test installation success:"
-    - python --version
-    - python -c "import openpathsampling; import pyretis"
-
-    # run tests
-    - conda info --envs
+    - source devtools/ci/test_installation.sh
     - conda install --yes nose nose-timer python-coveralls
+
+script:
+    - conda info --envs
+    - conda list
+    # run tests
 
 env:
     matrix:

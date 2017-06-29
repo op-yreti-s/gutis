@@ -1,8 +1,5 @@
 language: python
 
-python:
-    - "3.6"
-
 install:
     - deactivate
     - source devtools/ci/install_conda.sh
@@ -13,6 +10,11 @@ script:
     - conda install --yes conda-build
     - conda build devtools/ops-conda-recipe
     - pip install pyretis
+    - echo travis_fold:end:installation
+
+    - echo "Test installation success:"
+    - python --version
+    - python -c "import openpathsampling; import pyretis"
 
     # run tests
     - conda info --envs
@@ -20,5 +22,5 @@ script:
 
 env:
     matrix:
-        - python=3.6 CONDA_PY=36 CONDA_NPY=110
+        - CONDA_PY=3.6
 

@@ -3,7 +3,9 @@
 # this step is done automatically by conda build
 # cp -r $RECIPE_DIR/../.. $SRC_DIR
 #$PYTHON setup.py install --single-version-externally-managed --record=/tmp/record.txt
-
+echo "Starting build.sh for OPS"
+pwd
+ls
 pip install -e .
 
 # Add more build steps here, if they are necessary.

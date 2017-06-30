@@ -29,9 +29,9 @@ requirements:
     - networkx
     - matplotlib
 
-test:
-  imports:
-    - openpathsampling
+#test:
+  #imports:
+    #- openpathsampling
 
 about:
   home: http://github.com/openpathsampling/openpathsampling

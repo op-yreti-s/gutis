@@ -15,7 +15,8 @@ install:
 
 script:
     # run tests
-    - pytest
+    - pytest --cov=gutis -v
+    - coveralls
 
 env:
     matrix:

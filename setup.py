@@ -80,12 +80,14 @@ write_version_py()
 def buildKeywordDictionary():
     # from distutils.core import Extension
     setupKeywords = {}
-    setupKeywords["name"]              = "OPSPiggybacker"
+    setupKeywords["name"]              = "GUTIS"
     setupKeywords["version"]           = "0.1.0"
-    setupKeywords["author"]            = "David W.H. Swenson"
+    setupKeywords["author"]            = """
+    David W.H. Swenson, Anders Lervik, Enrico Riccardi
+                                         """
     setupKeywords["author_email"]      = "dwhs@hyperblazer.net"
     setupKeywords["license"]           = "LGPL 2.1 of greater"
-    setupKeywords["download_url"]      = "http://github.com/dwhswenson/OPSPiggybacker"
+    setupKeywords["download_url"]      = "http://github.com/op-yreti-s/gutis"
     setupKeywords["packages"]          = ['gutis',
                                           'gutis.tests']
     setupKeywords["package_dir"]       = {

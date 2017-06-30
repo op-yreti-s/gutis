@@ -1,14 +1,17 @@
 package:
-  name: openpathsampling-dev
+  name: openpathsampling
   version: "0.9.2"
 
 source:
-  git_url: https://github.com/jhprinz/openpathsampling
-  git_tag: python3-jhp
+  #git_url: https://github.com/jhprinz/openpathsampling
+  #git_tag: python3-jhp
+  git_url: https://github.com/dwhswenson/openpathsampling
+  git_tag: python3
 
 build:
   preserve_egg_dir: True
   number: 0
+  #script: python setup.py install --single-version-externally-managed --record=/tmp/record.txt
 
 requirements:
   build:
@@ -29,9 +32,27 @@ requirements:
     - networkx
     - matplotlib
 
-#test:
-  #imports:
-    #- openpathsampling
+  run:
+    - python
+    - future
+    - ujson
+    - setuptools
+    - numpy
+    - scipy
+    - pandas
+    - hdf4 4.2.12
+    - netcdf4
+    - openmm
+    - openmmtools
+    - jupyter
+    - mdtraj
+    - svgwrite
+    - networkx
+    - matplotlib
+
+test:
+  imports:
+    - openpathsampling
 
 about:
   home: http://github.com/openpathsampling/openpathsampling

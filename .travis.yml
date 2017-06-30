@@ -6,6 +6,7 @@ install:
     - export PYTHONUNBUFFERED=true
     - conda install --yes conda-build
     - conda build devtools/ops-conda-recipe
+    - conda install --use-local openpathsampling
     - pip install pyretis
     - source devtools/ci/test_installation.sh
     - conda install --yes pytest pytest-cov python-coveralls

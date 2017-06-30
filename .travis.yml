@@ -1,0 +1,24 @@
+language: python
+
+install:
+    - deactivate
+    - source devtools/ci/install_conda.sh
+    - export PYTHONUNBUFFERED=true
+    - conda install --yes conda-build
+    - conda build devtools/ops-conda-recipe
+    - conda install --yes --use-local openpathsampling
+    - pip install pyretis
+    - source devtools/ci/test_installation.sh
+    - conda install --yes pytest pytest-cov python-coveralls
+    - conda info --envs
+    - conda list
+
+script:
+    # run tests
+    - pytest --cov=gutis -v
+    - coveralls
+
+env:
+    matrix:
+        - CONDA_PY=3.6
+

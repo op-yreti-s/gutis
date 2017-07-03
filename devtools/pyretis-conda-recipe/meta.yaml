@@ -1,0 +1,49 @@
+package:
+  name: pyretis
+  version: "0.9.1"
+
+source:
+  #git_url: https://github.com/jhprinz/openpathsampling
+  #git_tag: python3-jhp
+  git_url: https://gitlab.com/pyretis/pyretis
+
+build:
+  preserve_egg_dir: True
+  number: 0
+  #script: python setup.py install --single-version-externally-managed --record=/tmp/record.txt
+
+requirements:
+  build:
+    - python
+    - future
+    - setuptools
+    - numpy
+    - scipy
+    - pandas
+    - mdtraj
+    - matplotlib
+    - jinja2
+    - tqdm
+    - colorama
+
+  run:
+    - python
+    - future
+    - setuptools
+    - numpy
+    - scipy
+    - pandas
+    - mdtraj
+    - matplotlib
+    - jinja2
+    - tqdm
+    - colorama
+
+test:
+  imports:
+    - pyretis
+
+about:
+  home: http://github.com/pyretis/pyretis
+  license: LGPL 2.1 or later
+  summary: ''
